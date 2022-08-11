@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_client/utils/sputils.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 mixin SplashMixin<T extends StatefulWidget> on State<T> {
   @override
@@ -38,7 +39,7 @@ mixin SplashMixin<T extends StatefulWidget> on State<T> {
   //页面跳转
   void goHomePage() {
     String? userinfo = SPUtils.getUserInfo();
-    if (userinfo != null) {
+    if (userinfo != null && userinfo != "") {
       Navigator.of(context).pushReplacementNamed('/home');
     } else {
       Navigator.of(context).pushReplacementNamed('/login');

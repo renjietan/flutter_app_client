@@ -14,36 +14,33 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> with LoginMixin {
-  // 响应空白处的焦点的Node
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        child: Scaffold(
-          body: Container(
-            color: const Color(0xFF5AA6FD).withOpacity(0.1),
-            height: double.infinity,
-            child: GestureDetector(
-              onTap: () {
-                // 点击空白页面关闭键盘
-                closeKeyboard(context);
-              },
-              // child: buildForm(context),
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 16.0,
-                  horizontal: 24.0,
-                ),
-                child: Center(
-                  child: buildForm(context),
-                ),
+      child: Scaffold(
+        body: Container(
+          color: const Color(0xFF5AA6FD).withOpacity(0.1),
+          height: double.infinity,
+          child: GestureDetector(
+            onTap: () {
+              // 点击空白页面关闭键盘
+              closeKeyboard(context);
+            },
+            // child: buildForm(context),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(
+                vertical: 16.0,
+                horizontal: 24.0,
               ),
+              child: buildForm(context),
             ),
           ),
         ),
-        onWillPop: () async {
-          return Future.value(false);
-        });
+      ),
+      onWillPop: () async {
+        return Future.value(false);
+      },
+    );
   }
 
   //构建表单
@@ -52,6 +49,8 @@ class _LoginPageState extends State<LoginPage> with LoginMixin {
       key: formKey,
       autovalidateMode: AutovalidateMode.always,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           TextFormField(
             autofocus: false,
@@ -71,7 +70,6 @@ class _LoginPageState extends State<LoginPage> with LoginMixin {
           TextFormField(
             controller: pwdController,
             decoration: InputDecoration(
-              // labelText: "密码",
               hintText: "请输入密码",
               hintStyle: const TextStyle(fontSize: 12),
               icon: const Icon(Icons.lock),

@@ -1,7 +1,7 @@
 ### flutter create 项目名称
 ### 需拷贝的文件夹
   - ./assets
-  - ./lib
+  - ./lib ：注意不要拷贝lib文件夹中的generated_plugin_registrant.dart，这个文件是自动生成的
   - ./test
   - ./analysis_options.yaml
   - ./build_iconfont.py
@@ -12,6 +12,7 @@
   
 ### 添加第三方包
 - ./pubspec.yaml中，仅仅需要拷贝第三方包
+- ./pubspec.yaml中，添加图片资源
 
 ### android原生代码修改
   - android/app/build.gradle

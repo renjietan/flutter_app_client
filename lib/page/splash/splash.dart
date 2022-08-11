@@ -16,7 +16,6 @@ class _SplashPageState extends State<SplashPage> with SplashMixin {
       ),
       child: const Center(
         child: FlutterLogo(size: 96),
-        // child: proca,
       ),
     );
   }
