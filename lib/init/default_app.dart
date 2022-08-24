@@ -48,7 +48,6 @@ class MyApp extends StatelessWidget {
   ///  @date:2020-09-17 15:46:18 @author: 谭人杰
   /// 不可按照官方API逆行封装，导致root context指向问题
   /// 所以必须使MaterialApp作为element tree的root节点
-
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: const Size(600, 1400),

@@ -48,6 +48,7 @@ mixin LoginMixin<T extends StatefulWidget> on State<T> {
     UserInfoStore userInfo = Provider.of<UserInfoStore>(context, listen: false);
     var s = await Auth.login({});
     LoginModel res = LoginModel.fromJson(s);
+
     userInfo.userInfo = json.encode(res.msg);
     Navigator.of(context).pushNamedAndRemoveUntil("/home", (route) => false);
   }
